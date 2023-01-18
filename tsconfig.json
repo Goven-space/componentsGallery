@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",// 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ], /* 注意：如果未指定--lib，则会注入默认的librares列表。注入的默认库为：
+       对于 --target ES5: DOM,ES5,ScriptHost
+       对于 --target ES6: DOM,ES6,DOM.Iterable,ScriptHost
+       TS 绝不会在您的代码中注入polyfill,所以需要你自己制定编译lib */
+    "allowJs": true,  // 是否检测JS的语法
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",// 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react", // react18这里也可以改成react-jsx
+    // 开启装饰器使用
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@page/*": [
+        "src/page/*"
+      ],
+      "@mock/*": [
+        "src/mock/*"
+      ],
+      "@component/*": [
+        "src/component/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ]
+    }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.jsx"]
+  // 指定需要编译文件 否则默认当前目录下除了exclude之外的所有.ts, .d.ts,.tsx 文件
+}

@@ -1,0 +1,17 @@
+{
+    //提示别名
+    "compilerOptions": {
+      "target": "ESNext",
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+        "@mock/*": ["mock/*"],
+        "@assets/*": ["src/assets/*"],
+        "@page/*": ["src/page/*"]
+      }
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["src", "mock"]
+  }
+  
