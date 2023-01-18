@@ -24,11 +24,12 @@ function TreeSelect_4(props) {
   const [treeData, setTreeData] = useState([]);
 
   useEffect(() => {
-
+    loadTreeData()
   }, [])
 
   const loadTreeData = () => {
-
+    // 调取接口获取数据
+    setTreeData(mockData)
   }
  
 
@@ -51,9 +52,8 @@ function TreeSelect_4(props) {
 
   const onLoadData = treeNode => {
     const treeData = [...treeList];
-    let curKey = treeNode.props.eventKey;
+    let curKey = treeNode.props.eventKey; 
     const params = { deptCode: curKey };
-    let i = 0;
     const loop = (curTreeData, newChildrenData) => {
       curTreeData.forEach(item => {
         if (curKey === item.key) {
@@ -94,6 +94,7 @@ function TreeSelect_4(props) {
       allowClear
       multiple
       onSelect={onSelect}
+      loadData={onLoadData}
     />
   );
 }
